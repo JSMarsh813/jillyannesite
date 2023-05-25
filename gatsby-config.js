@@ -8,8 +8,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  plugins: [`gatsby-plugin-netlify-cms`],
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `JillyAnne`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -37,6 +38,23 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Josefin Slab`,
+            file: `https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600;700&display=swap`,
+          },
+        ],
       },
     },
   ],
