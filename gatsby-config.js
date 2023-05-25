@@ -8,7 +8,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  plugins: [`gatsby-plugin-netlify-cms`],
   siteMetadata: {
     title: `JillyAnne`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -17,6 +16,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
