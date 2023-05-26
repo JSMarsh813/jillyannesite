@@ -9,6 +9,8 @@ import LargeSocialLinks from "../components/LargeSocialLinks"
 
 // import Flowers from "../images/flowers.png"
 
+import BlogRollPrettier from "../components/BlogRollPrettier"
+
 const socials = [
   {
     imageLink:
@@ -66,18 +68,8 @@ const IndexPage = () => (
         LATEST POSTS
       </h2>
 
-      <section
-        className="flex flex-wrap"
-        // style={{
-        //   backgroundImage: `url(${Flowers})`,
-        //   backgroundPosition: "top",
-        //   backgroundSize: "24% 190px",
-        //   backgroundRepeat: "repeat-x",
-        // }}
-      >
-        <PostPreview />
-        <PostPreview />
-        <PostPreview />
+      <section>
+        <BlogRollPrettier />
       </section>
 
       <div
@@ -87,7 +79,7 @@ const IndexPage = () => (
         }}
       >
         <Link
-          className="bg-secondary/70 text-2xl text-white py-4 px-8 text-center font-bold border-b-8 border-primary/40"
+          className="bg-secondary/70 text-2xl text-white py-4 px-8 text-center font-bold border-b-8 border-primary/40 custom_hover"
           to="/blog"
         >
           View More Posts
