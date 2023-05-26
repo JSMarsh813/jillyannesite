@@ -18,8 +18,8 @@ collections:
     label: "Blog"
     folder: "src/pages/blog"
     create: true
-    media_folder: "" #save images in the posts own folder instead of the static folder
-    public_folder: ""
+    # media_folder: "" #save images in the posts own folder instead of the static folder
+    # public_folder: ""
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {

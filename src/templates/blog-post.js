@@ -24,9 +24,9 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section bg-primary py-6 text-primary">
+    <section className="section bg-primary py-6 text-black">
       {helmet || ""}
-
+      {console.log(contentComponent)}
       <div className=" px-4 max-w-screen-lg mx-auto">
         <div className="bg-white">
           <div className="border-2 border-secondary px-4">
