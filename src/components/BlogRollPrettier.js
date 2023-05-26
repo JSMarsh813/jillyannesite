@@ -22,18 +22,21 @@ const BlogRollTemplate = props => {
             }}
             key={post.id}
           >
-            <div class="max-w-[300px] mx-auto mb-10">
+            <div className="max-w-[300px] mx-auto mb-10">
               {post?.frontmatter?.featuredimage && (
-                <div class="rounded overflow-hidden mb-8">
-                  <img
-                    src={post.frontmatter.featuredimage}
-                    alt={`${
-                      post.frontmatter.featuredimagealt
-                        ? post.frontmatter.featuredimagealt
-                        : ""
-                    }`}
-                    class="w-full"
-                  />
+                <div class="rounded mb-8 h-[300px]  flex overflow-hidden">
+                  <div className="my-auto  ">
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `${
+                          post.frontmatter.featuredimagealt
+                            ? post.frontmatter.featuredimagealt
+                            : ""
+                        }`,
+                      }}
+                    />
+                  </div>
                 </div>
               )}
               <div>
@@ -72,12 +75,14 @@ const BlogRollTemplate = props => {
               </div>
             </div>
             {/* KEEP READING BUTTON */}
-            <Link
-              className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary text-white"
-              to={post.fields.slug}
-            >
-              Keep Reading →
-            </Link>
+            <div className="text-center">
+              <Link
+                className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary text-white"
+                to={post.fields.slug}
+              >
+                Keep Reading →
+              </Link>
+            </div>
           </div>
 
           // <div
@@ -167,6 +172,7 @@ export default function BlogRoll() {
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost
                   featuredimage
+
                   featuredimagealt
                 }
               }

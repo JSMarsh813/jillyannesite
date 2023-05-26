@@ -20,19 +20,21 @@ const BlogRollTemplate = props => {
                 post.frontmatter.featuredpost ? "is-featured" : ""
               }`}
             >
-              <header>
+              <header className="max-w-[300px] mx-auto mb-10">
                 {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail ">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `${
-                          post.frontmatter.featuredimagealt
-                            ? post.frontmatter.featuredimagealt
-                            : ""
-                        }`,
-                      }}
-                    />
+                  <div className="rounded mb-8 h-[300px]  flex overflow-hidden bg-white">
+                    <div className="my-auto ">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: post.frontmatter.featuredimage,
+                          alt: `${
+                            post.frontmatter.featuredimagealt
+                              ? post.frontmatter.featuredimagealt
+                              : ""
+                          }`,
+                        }}
+                      />
+                    </div>
                   </div>
                 )}
                 <p className="post-meta px-6 pb-2 pt-2 space-y-2">
@@ -53,12 +55,14 @@ const BlogRollTemplate = props => {
                 <p className="pb-4">{post.excerpt}</p>
 
                 {/* KEEP READING BUTTON */}
-                <Link
-                  className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary"
-                  to={post.fields.slug}
-                >
-                  Keep Reading →
-                </Link>
+                <div className="text-center">
+                  <Link
+                    className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary"
+                    to={post.fields.slug}
+                  >
+                    Keep Reading →
+                  </Link>
+                </div>
               </section>
             </article>
           </div>
