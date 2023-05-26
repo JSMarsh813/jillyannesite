@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Link } from "gatsby"
+import BlogRoll from "../components/BlogRoll"
 
 const tags = [
   {
@@ -168,6 +169,7 @@ export default function Blog() {
                 </p>
               </div>
             </a>
+
             <a
               rel="noopener noreferrer"
               href="#"
@@ -223,6 +225,8 @@ export default function Blog() {
               Load more posts...
             </button>
           </div>
+
+          <BlogRoll />
         </div>
       </section>
     </Layout>
