@@ -1,11 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import GeneralHeader from "../components/GeneralHeader"
 
 export default function About() {
   return (
     <Layout>
-      <div>About</div>
+      <GeneralHeader text="About Me" />
     </Layout>
   )
 }

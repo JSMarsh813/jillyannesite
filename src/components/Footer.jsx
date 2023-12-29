@@ -32,10 +32,12 @@ export default function Footer() {
     >
       <section className="flex gap-14 text-secondary font-bold tracking-widest">
         <ul>
-          <li className="text-primary text-lg">JILLY </li>
+          <li className="text-primary text-lg" key="footer-jilly">
+            JILLY{" "}
+          </li>
 
           {navigation.map(item => (
-            <li>
+            <li key={`li ${item.name}`}>
               <Link
                 key={item.name}
                 className="block custom_hover"
@@ -49,10 +51,12 @@ export default function Footer() {
         </ul>
 
         <ul>
-          <li className="text-primary text-lg">CONNECT </li>
+          <li className="text-primary text-lg" key="footer-connect">
+            CONNECT{" "}
+          </li>
 
           {socials.map(item => (
-            <li>
+            <li key={`li ${item.name}`}>
               <a
                 key={item.name}
                 className="block custom_hover"

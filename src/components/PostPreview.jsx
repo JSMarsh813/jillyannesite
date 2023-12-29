@@ -12,17 +12,17 @@ export default function PostPreview() {
         backgroundRepeat: "repeat-x",
       }}
     >
-      <div class="max-w-[370px] mx-auto mb-10">
-        <div class="rounded overflow-hidden mb-8">
+      <div className="max-w-[370px] mx-auto mb-10">
+        <div className="rounded overflow-hidden mb-8">
           <img
             src="https://cdn.tailgrids.com/1.0/assets/images/blogs/blog-01/image-01.jpg"
             alt="image"
-            class="w-full"
+            className="w-full"
           />
         </div>
         <div>
           <span
-            class="
+            className="
                      bg-primary
                      rounded
                      inline-block
@@ -41,7 +41,7 @@ export default function PostPreview() {
           <h3>
             <a
               href="javascript:void(0)"
-              class="
+              className="
                         font-semibold
                         text-xl
                         sm:text-2xl
@@ -56,7 +56,7 @@ export default function PostPreview() {
               Meet AutoManage, the best AI management tools
             </a>
           </h3>
-          <p class="text-base text-body-color">
+          <p className="text-base text-body-color">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>

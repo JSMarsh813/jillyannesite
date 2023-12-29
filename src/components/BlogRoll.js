@@ -4,25 +4,24 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
 const BlogRollTemplate = props => {
-  const { edges: posts } = props.data.allMarkdownRemark
+  let posts = props.props
 
   return (
-    <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
       {posts &&
         posts.map(({ node: post }) => (
           <div
-            className="is-parent column is-6 max-w-sm mx-auto group hover:no-underline focus:no-underline bg-primary text-white"
+            className=" is-6 group bg-primary text-white w-sm styling"
             key={post.id}
           >
-            {console.log(posts)}
             <article
-              className={`blog-list-item pb-4 tile is-child box notification ${
+              className={`blog-list-item pb-4  ${
                 post.frontmatter.featuredpost ? "is-featured" : ""
               }`}
             >
-              <header className="max-w-[300px] mx-auto mb-10">
-                {post?.frontmatter?.featuredimage && (
-                  <div className="rounded mb-8 h-[300px]  flex overflow-hidden bg-white">
+              <header className="w-300px mx-auto mb-10">
+                {post?.frontmatter?.featuredimage ? (
+                  <div className="rounded mb-8 h-[300px]  flex overflow-hidden">
                     <div className="my-auto ">
                       <PreviewCompatibleImage
                         imageInfo={{
@@ -36,6 +35,9 @@ const BlogRollTemplate = props => {
                       />
                     </div>
                   </div>
+                ) : (
+                  //to add empty space if no image was provided for the post, so the posts line up nicely
+                  <div className="rounded mb-8 h-[300px]  flex overflow-hidden"></div>
                 )}
                 <p className="post-meta px-6 pb-2 pt-2 space-y-2">
                   <Link
@@ -44,16 +46,13 @@ const BlogRollTemplate = props => {
                   >
                     {post.frontmatter.title}
                   </Link>
-
                   <span className="block text-xs text-white">
                     {post.frontmatter.date}
                   </span>
                 </p>
               </header>
-
               <section className="px-6">
                 <p className="pb-4">{post.excerpt}</p>
-
                 {/* KEEP READING BUTTON */}
                 <div className="text-center">
                   <Link
@@ -71,46 +70,40 @@ const BlogRollTemplate = props => {
   )
 }
 
-BlogRoll.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-}
+export default BlogRollTemplate
 
-export default function BlogRoll() {
-  return (
-    //  filter: { frontmatter: { tags: { in: "something" } } } allows us to filter the posts sent back by tags
+// export default function BlogRoll() {
+//   return (
+//     //  filter: { frontmatter: { tags: { in: "something" } } } allows us to filter the posts sent back by tags
 
-    <StaticQuery
-      query={graphql`
-        query BlogRollQuery {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { tags: { in: "something" } } }
-          ) {
-            edges {
-              node {
-                excerpt(pruneLength: 400)
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                  templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredpost
-                  featuredimage
-                  featuredimagealt
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} />}
-    />
-  )
-}
+//     <StaticQuery
+//       query={graphql`
+//         query BlogRollQuery {
+//           allMarkdownRemark(
+//             sort: { order: DESC, fields: [frontmatter___date] }
+//           ) {
+//             edges {
+//               node {
+//                 excerpt(pruneLength: 400)
+//                 id
+//                 fields {
+//                   slug
+//                 }
+//                 frontmatter {
+//                   title
+//                   templateKey
+//                   date(formatString: "MMMM DD, YYYY")
+//                   featuredpost
+//                   featuredimage
+//                   tags
+//                   featuredimagealt
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       `}
+//       render={(data, count) => <BlogRollTemplate data={data} count={count} />}
+//     />
+//   )
+// }

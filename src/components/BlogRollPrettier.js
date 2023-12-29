@@ -5,9 +5,9 @@ import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import PostPreview from "./PostPreview"
 import Flowers from "../images/flowers.png"
 
-const BlogRollTemplate = props => {
-  const { edges: posts } = props.data.allMarkdownRemark
-
+const BlogRollPrettierTemplate = props => {
+  let posts = props.props
+  console.log(posts)
   return (
     <div className="flex flex-wrap">
       {posts &&
@@ -23,9 +23,9 @@ const BlogRollTemplate = props => {
             key={post.id}
           >
             <div className="max-w-[300px] mx-auto mb-10">
-              {post?.frontmatter?.featuredimage && (
-                <div class="rounded mb-8 h-[300px]  flex overflow-hidden">
-                  <div className="my-auto  ">
+              {post?.frontmatter?.featuredimage ? (
+                <div className="rounded h-[300px]  flex overflow-hidden ">
+                  <div className="my-auto ">
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -38,10 +38,13 @@ const BlogRollTemplate = props => {
                     />
                   </div>
                 </div>
+              ) : (
+                //to add empty space if no image was provided for the post, so the posts line up nicely
+                <div className="rounded mb-8 h-[300px]  flex overflow-hidden"></div>
               )}
-              <div>
+              <article className="">
                 <span
-                  class="
+                  className="
                          bg-primary
                          rounded
                          inline-block
@@ -71,18 +74,19 @@ const BlogRollTemplate = props => {
                     {post.frontmatter.title}
                   </Link>
                 </h3>
-                <p class="text-base text-body-color">{post.excerpt}</p>
-              </div>
+                <p className="text-base text-body-color h-64">{post.excerpt}</p>
+
+                <div className="text-center">
+                  <Link
+                    className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary text-white"
+                    to={post.fields.slug}
+                  >
+                    Keep Reading →
+                  </Link>
+                </div>
+              </article>
             </div>
             {/* KEEP READING BUTTON */}
-            <div className="text-center">
-              <Link
-                className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary text-white"
-                to={post.fields.slug}
-              >
-                Keep Reading →
-              </Link>
-            </div>
           </div>
 
           // <div
@@ -142,45 +146,50 @@ const BlogRollTemplate = props => {
   )
 }
 
-BlogRoll.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
-}
+export default BlogRollPrettierTemplate
 
-export default function BlogRoll() {
-  return (
-    <StaticQuery
-      query={graphql`
-        query BlogRollQuery {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-          ) {
-            edges {
-              node {
-                excerpt(pruneLength: 400)
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                  templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredpost
-                  featuredimage
+// BlogRoll.propTypes = {
+//   data: PropTypes.shape({
+//     allMarkdownRemark: PropTypes.shape({
+//       edges: PropTypes.array,
+//     }),
+//   }),
+// }
 
-                  featuredimagealt
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={(data, count) => <BlogRollTemplate data={data} count={count} />}
-    />
-  )
-}
+// export default function BlogRoll() {
+//   return (
+//     // sort so the newest are first
+//     // limit to showing 3 of them
+//     <StaticQuery
+//       query={graphql`
+//         query BlogRollQuery {
+//           allMarkdownRemark(
+//             sort: { order: DESC, fields: [frontmatter___date] }
+//             filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+//             limit: 3
+//           ) {
+//             edges {
+//               node {
+//                 excerpt(pruneLength: 400)
+//                 id
+//                 fields {
+//                   slug
+//                 }
+//                 frontmatter {
+//                   title
+//                   templateKey
+//                   date(formatString: "MMMM DD, YYYY")
+//                   featuredpost
+//                   featuredimage
+
+//                   featuredimagealt
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       `}
+//       render={(data, count) => <BlogRollTemplate data={data} count={count} />}
+//     />
+//   )
+// }
