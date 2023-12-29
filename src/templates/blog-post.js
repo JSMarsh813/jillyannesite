@@ -29,7 +29,7 @@ export const BlogPostTemplate = ({
       {console.log(contentComponent)}
       <div className=" px-4 max-w-screen-lg mx-auto">
         <div className="bg-white">
-          <div className="border-2 border-secondary px-4">
+          <div className="border-2 border-secondary">
             <header className="bg-secondary p-2">
               <h1 className="text-5xl font-semibold md:tracking-tight text-center py-4 text-white">
                 {title}

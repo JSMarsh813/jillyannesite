@@ -81,12 +81,14 @@ BlogRoll.propTypes = {
 
 export default function BlogRoll() {
   return (
+    //  filter: { frontmatter: { tags: { in: "something" } } } allows us to filter the posts sent back by tags
+
     <StaticQuery
       query={graphql`
         query BlogRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { tags: { in: "something" } } }
           ) {
             edges {
               node {

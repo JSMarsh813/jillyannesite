@@ -35,7 +35,11 @@ export default function Blog() {
 
       <section className="flex flex-wrap gap-4 justify-center">
         {tags.map(item => (
-          <Link to="" className="hover:bg-highlights hover:rounded-full py-8">
+          <Link
+            to={`/tags/${item.name}`}
+            //change so it goes to /tags/item.name
+            className="hover:bg-highlights hover:rounded-full py-8"
+          >
             <img
               className="max-w-xs h-60  h-40 rounded-3xl relative -bottom-4"
               //moving image down so the circle that shows on hover is centered

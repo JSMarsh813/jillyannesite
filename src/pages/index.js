@@ -26,7 +26,7 @@ const socials = [
   },
   {
     imageLink:
-      "https://icons-for-free.com/iconfiles/png/512/facebook+logo+media+network+social+icon-1320192913497992427.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/1200px-Facebook_Logo_2023.png",
     name: "FACEBOOK",
     href: "https://www.facebook.com/JillyannesJourney",
   },
