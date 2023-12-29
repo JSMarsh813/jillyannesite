@@ -80,7 +80,7 @@ const Blog = props => {
           >
             <img
               key={`img ${item.name}`}
-              className="max-w-xs h-60  h-40 rounded-3xl relative -bottom-4"
+              className="max-w-xs h-24 rounded-3xl relative -bottom-4 md:h-32 xl:h-44 "
               //moving image down so the circle that shows on hover is centered
               src={item.imageLink}
             ></img>
