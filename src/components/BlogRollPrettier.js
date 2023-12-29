@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link, graphql, StaticQuery } from "gatsby"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import PostPreview from "./PostPreview"
-import Flowers from "../images/flowers.png"
+import backgroundImage from "../images/funkyLines.jpg"
 
 const BlogRollPrettierTemplate = props => {
   let posts = props.props
@@ -13,19 +13,20 @@ const BlogRollPrettierTemplate = props => {
       {posts &&
         posts.map(({ node: post }) => (
           <div
-            className="w-full md:w-1/2 lg:w-1/3 px-4 pt-8 mb-6"
+            className="w-full md:w-1/2 lg:w-1/3 px-4 pt-6 mb-6"
             style={{
-              backgroundImage: `url(${Flowers})`,
+              backgroundImage: `url(${backgroundImage})`,
               backgroundPosition: "top",
               backgroundSize: "100% 190px",
               backgroundRepeat: "repeat-x",
             }}
             key={post.id}
           >
-            <div className="max-w-[300px] mx-auto mb-10">
+            <div className="max-w-[300px] mx-auto mb-8">
               {post?.frontmatter?.featuredimage ? (
                 <div className="rounded h-[300px]  flex overflow-hidden ">
                   <div className="my-auto ">
+                    {/* my-auto is key to have the post image move down the bg image */}
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -40,7 +41,7 @@ const BlogRollPrettierTemplate = props => {
                 </div>
               ) : (
                 //to add empty space if no image was provided for the post, so the posts line up nicely
-                <div className="rounded mb-8 h-[300px]  flex overflow-hidden"></div>
+                <div className="rounded mb-2 h-[300px]  flex overflow-hidden"></div>
               )}
               <article className="">
                 <span

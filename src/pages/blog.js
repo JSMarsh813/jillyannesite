@@ -10,6 +10,39 @@ import GeneralHeader from "../components/GeneralHeader"
 const Blog = props => {
   const posts = props.data.allMarkdownRemark.edges
 
+  // State for the list
+  const [list, setList] = useState([...posts.slice(0, 3)])
+
+  // State to trigger load more
+  const [loadMore, setLoadMore] = useState(false)
+
+  // State of whether there is more to load
+  const [hasMore, setHasMore] = useState(posts.length > 3)
+
+  // Load more button click
+  const handleLoadMore = () => {
+    setLoadMore(true)
+  }
+
+  // Handle loading more articles
+  useEffect(() => {
+    if (loadMore && hasMore) {
+      const currentLength = list.length
+      const isMore = currentLength < posts.length
+      const nextResults = isMore
+        ? posts.slice(currentLength, currentLength + 3)
+        : []
+      setList([...list, ...nextResults])
+      setLoadMore(false)
+    }
+  }, [loadMore, hasMore]) //eslint-disable-line
+
+  //Check if there is more
+  useEffect(() => {
+    const isMore = list.length < posts.length
+    setHasMore(isMore)
+  }, [list]) //eslint-disable-line
+
   const tags = [
     {
       name: "life",
@@ -86,15 +119,20 @@ const Blog = props => {
               </p>
             </div>
           </a> */}
-          <BlogRoll props={posts} />
+          <BlogRoll props={list} />
 
           <div className="flex justify-center">
-            <button
-              type="button"
-              className="px-6 py-3 text-sm rounded-md hover:underline bg-secondary text-white"
-            >
-              Load more posts...
-            </button>
+            {hasMore ? (
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                className="px-6 py-3 text-sm rounded-md hover:underline bg-secondary text-white"
+              >
+                Load more posts...
+              </button>
+            ) : (
+              <p>No more results</p>
+            )}
           </div>
         </div>
       </section>

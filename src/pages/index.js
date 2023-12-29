@@ -94,7 +94,7 @@ const IndexPage = props => {
       </section>
 
       {/* ###############  SOCIALS ################ */}
-      <section className="tracking-widest  text-4xl bg-primary text-center text-white pt-10 pb-16 font-semibold">
+      <section className="tracking-widest  text-4xl bg-primary text-center text-white pt-10 pb-8 font-semibold">
         <h4 className="pb-10">CATCH UP WITH ME </h4>
       </section>
 

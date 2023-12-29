@@ -6,10 +6,10 @@ export default function LargeSocialLinks({ imageLink, name, href }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="hover:bg-secondary rounded-lg text-primary hover:text-white"
+      className="hover:bg-secondary p-2 rounded-lg text-primary hover:text-white"
     >
       <img
-        className="w-24 rounded-full "
+        className="w-20 rounded-full mx-auto "
         src={imageLink}
         alt={`${name} logo`}
       />
