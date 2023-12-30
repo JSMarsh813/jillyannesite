@@ -4,28 +4,28 @@ import { Link, graphql, StaticQuery } from "gatsby"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import PostPreview from "./PostPreview"
 import backgroundImage from "../images/funkyLines.jpg"
+import { StaticImage } from "gatsby-plugin-image"
 
 const BlogRollPrettierTemplate = props => {
   let posts = props.props
   console.log(posts)
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap ">
       {posts &&
         posts.map(({ node: post }) => (
-          <div
-            className="w-full md:w-1/2 lg:w-1/3 px-4 pt-6 mb-6"
-            style={{
-              backgroundImage: `url(${backgroundImage})`,
-              backgroundPosition: "top",
-              backgroundSize: "100% 190px",
-              backgroundRepeat: "repeat-x",
-            }}
-            key={post.id}
-          >
+          <div className="relative w-full md:w-1/2 lg:w-1/3  pt-6 mb-6">
+            <StaticImage
+              src="../images/funkyLines.jpg"
+              alt=""
+              loading="lazy"
+              objectfit="cover"
+              className="absolute z-0 w-full h-1/4"
+            />
+
             <div className="max-w-[300px] mx-auto mb-8">
               {post?.frontmatter?.featuredimage ? (
                 <div className="rounded h-[300px]  flex overflow-hidden ">
-                  <div className="my-auto ">
+                  <div className="my-auto z-20 ">
                     {/* my-auto is key to have the post image move down the bg image */}
                     <PreviewCompatibleImage
                       imageInfo={{
