@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { Disclosure } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import logo from "../images/jillylogo.png"
+
+import { StaticImage } from "gatsby-plugin-image"
 
 const sharedStylingForNavs =
   "rounded-md px-3 py-2 text-base font-semibold custom_hover text-primary"
@@ -42,12 +43,22 @@ export default function Example() {
                   {/* logo image for both navs */}
 
                   <Link to="/">
-                    <img
+                    <StaticImage
+                      key="logo"
+                      src="../images/jillylogo.png"
+                      alt="Logo for Jillyannes"
+                      loading="eager"
+                      className="block h-8 w-auto hover:invert aspect-[13/3]"
+                      tabIndex={0}
+                    />
+                    {/* aspect ratio will have to be changed if a new logo is made */}
+
+                    {/* <img
                       className="block h-8 w-auto hover:invert"
                       src={logo}
                       alt="Logo for Jillyannes"
                       tabIndex={0}
-                    />
+                    /> */}
                   </Link>
                 </div>
                 {/* ######### Panel for desktop menu ############# */}

@@ -24,7 +24,7 @@ const IndexPage = props => {
             <StaticImage
               alt=""
               loading="eager"
-              height="340"
+              height={340}
               src="../images/landingpage.png"
               className="rounded-lg shadow-2xl"
             ></StaticImage>
@@ -59,14 +59,17 @@ const IndexPage = props => {
           <BlogRollPrettier props={posts} />
         </section>
 
-        <div
-          className="text-center h-36 flex justify-center items-center"
-          style={{
-            backgroundImage: `url(${`https://images.pexels.com/photos/304664/pexels-photo-304664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`})`,
-          }}
-        >
+        <div className="text-center h-36 w-screen flex justify-center items-center relative">
+          <StaticImage
+            src="../images/blue-banner.webp"
+            alt=""
+            loading="lazy"
+            objectfit="cover"
+            className="absolute z-0 w-full h-full"
+          />
+
           <Link
-            className="bg-secondary/70 text-2xl text-white py-4 px-8 text-center font-bold border-b-8 border-primary/40 custom_hover"
+            className="bg-secondary/70 text-2xl text-white py-4 px-8 text-center font-bold border-b-8 border-primary/40 custom_hover z-40"
             to="/blog"
           >
             View More Posts
