@@ -6,6 +6,10 @@ import { Link } from "gatsby"
 import BlogRoll from "../components/BlogRoll"
 import PropTypes from "prop-types"
 import GeneralHeader from "../components/GeneralHeader"
+import LifeTag from "../components/blogTagIcons/LifeTag"
+import RecipesTag from "../components/blogTagIcons/RecipesTag"
+import ReviewsTag from "../components/blogTagIcons/ReviewsTag"
+import WellnessTag from "../components/blogTagIcons/WellnessTag"
 
 const Blog = props => {
   const posts = props.data.allMarkdownRemark.edges
@@ -71,7 +75,11 @@ const Blog = props => {
       <GeneralHeader text="Welcome To My Blog" />
 
       <section className="flex flex-wrap gap-4 justify-center">
-        {tags.map(item => (
+        <LifeTag></LifeTag>
+        <RecipesTag></RecipesTag>
+        <ReviewsTag></ReviewsTag>
+        <WellnessTag></WellnessTag>
+        {/* {tags.map(item => (
           <Link
             key={`Link ${item.name}`}
             to={`/tags/${item.name}`}
@@ -91,7 +99,7 @@ const Blog = props => {
               {item.name}
             </h3>
           </Link>
-        ))}
+        ))} */}
       </section>
 
       <GeneralHeader text="The Latest and Greatest" />

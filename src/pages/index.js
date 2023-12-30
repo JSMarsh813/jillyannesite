@@ -3,11 +3,12 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import landingimage from "../images/landingpage.png"
-import PostPreview from "../components/PostPreview"
-import LargeSocialLinks from "../components/LargeSocialLinks"
 
-// import Flowers from "../images/flowers.png"
+import PostPreview from "../components/PostPreview"
+import { StaticImage } from "gatsby-plugin-image"
+import Facebook from "../components/socials/facebook"
+import Instagram from "../components/socials/instagram"
+import Youtube from "../components/socials/youtube"
 
 import BlogRollPrettier from "../components/BlogRollPrettier"
 
@@ -15,40 +16,20 @@ const IndexPage = props => {
   const posts = props.data.allMarkdownRemark.edges
   //accesses array of node objects
 
-  console.log(props)
-
-  const socials = [
-    {
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/YouTube_social_red_square_%282017%29.svg/640px-YouTube_social_red_square_%282017%29.svg.png",
-      name: "YOUTUBE",
-      href: "https://www.youtube.com/@JillyannesJourney",
-    },
-    {
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png",
-      name: "INSTAGRAM",
-      href: "https://www.instagram.com/jillyannesjourney/",
-    },
-    {
-      imageLink:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/1200px-Facebook_Logo_2023.png",
-      name: "FACEBOOK",
-      href: "https://www.facebook.com/JillyannesJourney",
-    },
-  ]
-
   return (
     <Layout>
       <div>
         <div className="hero max-h-76 bg-primary">
           <div className="hero-content flex flex-col sm:flex-row text-center">
-            <img
-              src={landingimage}
-              className="max-h-96 max-w-sm rounded-lg shadow-2xl"
+            <StaticImage
               alt=""
-            />
-            <div className="bg-white p-8 -ml-6">
+              loading="eager"
+              height="340"
+              src="../images/landingpage.png"
+              className="rounded-lg shadow-2xl"
+            ></StaticImage>
+
+            <div className="bg-white p-8 -ml-6 z-40">
               <h1 className="text-3xl font-extrabold">Hi. I'm Jilly!</h1>
               <p className="py-6 text-xl font-extrabold">
                 Follow my journey to
@@ -99,14 +80,27 @@ const IndexPage = props => {
       </section>
 
       <section className="flex flex-wrap gap-4 relative -top-14 justify-center">
+        <Facebook></Facebook>
+        <Instagram></Instagram>
+        <Youtube></Youtube>
+        {/*         
         {socials.map(item => (
-          <LargeSocialLinks
-            imageLink={item.imageLink}
-            name={item.name}
+          <a
             href={item.href}
-            key={`social links ${item.name}`}
-          />
-        ))}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:bg-secondary p-2 rounded-lg text-primary hover:text-white"
+          >
+            <StaticImage
+              src={item.imageLink}
+              alt={`${item.name} logo`}
+              key={`social links ${item.name}`}
+              className="w-20 rounded-full mx-auto "
+            />
+
+            <p className="text-center  font-semibold ">{item.name} </p>
+          </a>
+        ))} */}
       </section>
     </Layout>
   )
