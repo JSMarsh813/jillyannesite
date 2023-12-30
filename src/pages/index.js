@@ -14,6 +14,7 @@ import BlogRollPrettier from "../components/BlogRollPrettier"
 
 const IndexPage = props => {
   const posts = props.data.allMarkdownRemark.edges
+
   //accesses array of node objects
 
   return (
@@ -25,6 +26,7 @@ const IndexPage = props => {
               alt=""
               loading="eager"
               height={340}
+              placeholder="blurred"
               src="../images/landingpage.png"
               className="rounded-lg shadow-2xl"
             ></StaticImage>
@@ -65,6 +67,7 @@ const IndexPage = props => {
             alt=""
             loading="lazy"
             objectfit="cover"
+            placeholder="blurred"
             className="absolute z-0 w-full h-full"
           />
 

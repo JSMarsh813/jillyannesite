@@ -8,7 +8,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const BlogRollPrettierTemplate = props => {
   let posts = props.props
-  console.log(posts)
+
   return (
     <div className="flex flex-wrap ">
       {posts &&
@@ -19,6 +19,7 @@ const BlogRollPrettierTemplate = props => {
               alt=""
               loading="eager"
               objectfit="cover"
+              placeholder="blurred"
               style={{
                 position: "absolute",
                 zIndex: "0",

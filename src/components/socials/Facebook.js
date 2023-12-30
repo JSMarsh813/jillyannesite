@@ -13,6 +13,7 @@ export default function Facebook() {
         src="../../images/Facebook_logo.webp"
         alt="facebook logo"
         loading="lazy"
+        placeholder="blurred"
         className="w-20 rounded-full mx-auto "
       />
 

@@ -13,6 +13,7 @@ export default function Instagram() {
         src="../../images/instagram.webp"
         loading="lazy"
         alt="instagram logo"
+        placeholder="blurred"
         className="w-20 rounded-full mx-auto "
       />
 

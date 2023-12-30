@@ -13,6 +13,7 @@ export default function Youtube() {
         src="../../images/youtube.webp"
         alt="Youtube Logo"
         loading="lazy"
+        placeholder="blurred"
         className="w-20 rounded-full mx-auto "
       />
 

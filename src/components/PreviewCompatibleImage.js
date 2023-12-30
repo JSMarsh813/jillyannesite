@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = { borderRadius: "5px" }
+  console.log(imageInfo)
 
   const { alt = "", childImageSharp, image } = imageInfo
 

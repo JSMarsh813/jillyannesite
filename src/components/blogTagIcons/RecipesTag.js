@@ -16,6 +16,7 @@ export default function RecipesTag() {
         src="https://healthhomeandhappiness.com/wp-content/uploads/2019/06/IMG_0299.jpg"
         alt={`image for ${tag}`}
         loading="eager"
+        placeholder="blurred"
         className="aspect-[4/3] h-24 rounded-3xl relative -bottom-4 md:h-32 xl:h-44 "
         //moving image down so the circle that shows on hover is centered
       />

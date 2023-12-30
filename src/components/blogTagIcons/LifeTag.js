@@ -16,6 +16,7 @@ export default function LifeTag() {
         src="https://images.freeimages.com/images/large-previews/447/young-llama-1370811.jpg"
         alt={`image for ${tag}`}
         loading="eager"
+        placeholder="blurred"
         className="aspect-[4/3] h-24 rounded-3xl relative -bottom-4 md:h-32 xl:h-44 "
         //moving image down so the circle that shows on hover is centered
       />
