@@ -19,8 +19,14 @@ const BlogRollPrettierTemplate = props => {
               alt=""
               loading="lazy"
               objectfit="cover"
-              className="absolute z-0 w-full h-1/4"
+              style={{
+                position: "absolute",
+                zIndex: "0",
+                width: "100%",
+                height: "25%",
+              }}
             />
+            {/* className="absolute z-0 w-full h-1/4" */}
 
             <div className="max-w-[300px] mx-auto mb-8">
               {post?.frontmatter?.featuredimage ? (
