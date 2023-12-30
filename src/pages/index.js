@@ -6,9 +6,9 @@ import Seo from "../components/seo"
 
 import PostPreview from "../components/PostPreview"
 import { StaticImage } from "gatsby-plugin-image"
-import Facebook from "../components/socials/facebook"
-import Instagram from "../components/socials/instagram"
-import Youtube from "../components/socials/youtube"
+import Facebook from "../components/socials/Facebook"
+import Instagram from "../components/socials/Instagram"
+import Youtube from "../components/socials/Youtube"
 
 import BlogRollPrettier from "../components/BlogRollPrettier"
 
