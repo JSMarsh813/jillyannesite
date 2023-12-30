@@ -48,6 +48,7 @@ export default function Example() {
                       src="../images/jillylogo.png"
                       alt="Logo for Jillyannes"
                       loading="eager"
+                      placeholder="blurred"
                       className="block h-8 w-auto hover:invert aspect-[13/3]"
                       tabIndex={0}
                     />
