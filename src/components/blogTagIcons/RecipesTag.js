@@ -14,7 +14,7 @@ export default function RecipesTag() {
       <StaticImage
         key={`img ${tag}`}
         src={"../../images/recipes.webp"}
-        alt={`image for ${tag}`}
+        alt=""
         loading="eager"
         placeholder="blurred"
         className="aspect-[4/3] h-24 rounded-3xl relative -bottom-4 md:h-32 xl:h-44 "

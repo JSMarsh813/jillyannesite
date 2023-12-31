@@ -40,7 +40,7 @@ export default function Footer() {
             <li key={`li ${item.name}`}>
               <Link
                 key={item.name}
-                className="block custom_hover"
+                className="block  h-12 md:h-8 custom_hover"
                 aria-label={item.current ? "page" : undefined}
                 to={item.href}
               >
@@ -59,7 +59,7 @@ export default function Footer() {
             <li key={`li ${item.name}`}>
               <a
                 key={item.name}
-                className="block custom_hover"
+                className="block h-12 md:h-8 custom_hover"
                 aria-label={item.current ? "page" : undefined}
                 href={item.href}
                 target="_blank"
