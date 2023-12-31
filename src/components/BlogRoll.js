@@ -1,7 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link, graphql, StaticQuery } from "gatsby"
-import PreviewCompatibleImage from "./PreviewCompatibleImage"
+import { Link } from "gatsby"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 

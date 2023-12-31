@@ -5,9 +5,8 @@ import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Content, { HTMLContent } from "../components/content"
-import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
-
-import Flowers from "../images/flowers.png"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -45,11 +44,12 @@ export const BlogPostTemplate = ({
                 className="featured-thumbnail m-auto pt-10 max-w-md
                 "
               >
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: image,
-                    alt: `${imagealt ? imagealt : ""}`,
-                  }}
+                <LazyLoadImage
+                  height="100"
+                  width="400"
+                  effect="blur"
+                  alt={imagealt ? imagealt : ""}
+                  src={image} // use normal <img> attributes as props
                 />
               </div>
             )}

@@ -3,8 +3,6 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-import PostPreview from "../components/PostPreview"
 import { StaticImage } from "gatsby-plugin-image"
 import Facebook from "../components/socials/Facebook"
 import Instagram from "../components/socials/Instagram"
@@ -93,24 +91,6 @@ const IndexPage = props => {
         <Facebook></Facebook>
         <Instagram></Instagram>
         <Youtube></Youtube>
-        {/*         
-        {socials.map(item => (
-          <a
-            href={item.href}
-            target="_blank"
-            rel="noreferrer"
-            className="hover:bg-secondary p-2 rounded-lg text-primary hover:text-white"
-          >
-            <StaticImage
-              src={item.imageLink}
-              alt={`${item.name} logo`}
-              key={`social links ${item.name}`}
-              className="w-20 rounded-full mx-auto "
-            />
-
-            <p className="text-center  font-semibold ">{item.name} </p>
-          </a>
-        ))} */}
       </section>
     </Layout>
   )
