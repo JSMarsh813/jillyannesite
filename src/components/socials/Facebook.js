@@ -10,7 +10,7 @@ export default function Facebook() {
       className="hover:bg-secondary p-2 rounded-lg text-primary hover:text-white"
     >
       <StaticImage
-        src="../../images/Facebook_logo.webp"
+        src="../../images/facebook_logo.webp"
         alt="facebook logo"
         loading="lazy"
         placeholder="blurred"
