@@ -27,6 +27,7 @@ const BlogRollTemplate = props => {
                     <div className="my-auto ">
                       <LazyLoadImage
                         height="100"
+                        width="400"
                         effect="blur"
                         alt={
                           post.frontmatter.featuredimagealt

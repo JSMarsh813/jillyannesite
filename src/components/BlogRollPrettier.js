@@ -39,6 +39,7 @@ const BlogRollPrettierTemplate = props => {
 
                     <LazyLoadImage
                       height="100"
+                      width="400"
                       effect="blur"
                       alt={
                         post.frontmatter.featuredimagealt
