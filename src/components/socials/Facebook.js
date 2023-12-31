@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export default function Facebook() {
   return (
     <a
-      href="https://www.facebook.com/NourishedByKeto"
+      href="https://www.facebook.com/NourishedByKeto/"
       target="_blank"
       rel="noreferrer"
       className="hover:bg-secondary p-2 rounded-lg text-primary hover:text-white"

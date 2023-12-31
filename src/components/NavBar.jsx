@@ -10,10 +10,10 @@ const sharedStylingForNavs =
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About", href: "/about", current: false },
-  { name: "Blog", href: "/blog", current: false },
-  { name: "Work With Me", href: "/workwithme", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "About", href: "/about/", current: false },
+  { name: "Blog", href: "/blog/", current: false },
+  { name: "Work With Me", href: "/workwithme/", current: false },
+  { name: "Contact", href: "/contact/", current: false },
 ]
 
 function classNames(...classes) {

@@ -4,16 +4,16 @@ import { Link } from "gatsby"
 export default function Footer() {
   const navigation = [
     { name: "HOME", href: "/" },
-    { name: "ABOUT", href: "/about" },
-    { name: "BLOG", href: "/blog" },
-    { name: "WORK WITH ME", href: "/workwithme" },
-    { name: "CONTACT", href: "/contact" },
+    { name: "ABOUT", href: "/about/" },
+    { name: "BLOG", href: "/blog/" },
+    { name: "WORK WITH ME", href: "/workwithme/" },
+    { name: "CONTACT", href: "/contact/" },
   ]
 
   const socials = [
     {
       name: "YOUTUBE",
-      href: "https://www.youtube.com/@JillyannesJourney",
+      href: "https://www.youtube.com/@JillyannesJourney/",
     },
     {
       name: "INSTAGRAM",
@@ -21,7 +21,7 @@ export default function Footer() {
     },
     {
       name: "FACEBOOK",
-      href: "https://www.facebook.com/JillyannesJourney",
+      href: "https://www.facebook.com/JillyannesJourney/",
     },
   ]
 

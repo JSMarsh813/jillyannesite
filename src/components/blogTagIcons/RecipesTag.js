@@ -7,7 +7,7 @@ export default function RecipesTag() {
   return (
     <Link
       key={`Link ${tag}`}
-      to={`/tags/${tag}`}
+      to={`/tags/${tag}/`}
       //change so it goes to /tags/item.name
       className="hover:bg-highlights hover:rounded-full py-8"
     >
