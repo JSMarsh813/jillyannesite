@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql, StaticQuery } from "gatsby"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 const BlogRollTemplate = props => {
   let posts = props.props
@@ -23,15 +25,15 @@ const BlogRollTemplate = props => {
                 {post?.frontmatter?.featuredimage ? (
                   <div className="rounded mb-8 h-[300px]  flex overflow-hidden">
                     <div className="my-auto ">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `${
-                            post.frontmatter.featuredimagealt
-                              ? post.frontmatter.featuredimagealt
-                              : ""
-                          }`,
-                        }}
+                      <LazyLoadImage
+                        height="100"
+                        effect="blur"
+                        alt={
+                          post.frontmatter.featuredimagealt
+                            ? post.frontmatter.featuredimagealt
+                            : ""
+                        }
+                        src={post.frontmatter.featuredimage} // use normal <img> attributes as props
                       />
                     </div>
                   </div>

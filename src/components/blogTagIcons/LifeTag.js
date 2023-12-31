@@ -13,7 +13,7 @@ export default function LifeTag() {
     >
       <StaticImage
         key={`img ${tag}`}
-        src="https://images.freeimages.com/images/large-previews/447/young-llama-1370811.jpg"
+        src={"../../images/llama.webp"}
         alt={`image for ${tag}`}
         loading="eager"
         placeholder="blurred"

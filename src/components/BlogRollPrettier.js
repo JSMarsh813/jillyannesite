@@ -5,6 +5,8 @@ import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import PostPreview from "./PostPreview"
 import backgroundImage from "../images/funkyLines.jpg"
 import { StaticImage } from "gatsby-plugin-image"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import "react-lazy-load-image-component/src/effects/blur.css"
 
 const BlogRollPrettierTemplate = props => {
   let posts = props.props
@@ -34,15 +36,16 @@ const BlogRollPrettierTemplate = props => {
                 <div className="rounded h-[300px]  flex overflow-hidden ">
                   <div className="my-auto z-20 ">
                     {/* my-auto is key to have the post image move down the bg image */}
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `${
-                          post.frontmatter.featuredimagealt
-                            ? post.frontmatter.featuredimagealt
-                            : ""
-                        }`,
-                      }}
+
+                    <LazyLoadImage
+                      height="100"
+                      effect="blur"
+                      alt={
+                        post.frontmatter.featuredimagealt
+                          ? post.frontmatter.featuredimagealt
+                          : ""
+                      }
+                      src={post.frontmatter.featuredimage} // use normal <img> attributes as props
                     />
                   </div>
                 </div>

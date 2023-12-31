@@ -13,7 +13,7 @@ export default function ReviewsTag() {
     >
       <StaticImage
         key={`img ${tag}`}
-        src="https://assets.entrepreneur.com/content/3x2/2000/20190128144410-GettyImages-1074272374.jpeg"
+        src={"../../images/reviews.webp"}
         alt={`image for ${tag}`}
         loading="eager"
         placeholder="blurred"

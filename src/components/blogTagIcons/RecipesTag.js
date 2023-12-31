@@ -13,7 +13,7 @@ export default function RecipesTag() {
     >
       <StaticImage
         key={`img ${tag}`}
-        src="https://healthhomeandhappiness.com/wp-content/uploads/2019/06/IMG_0299.jpg"
+        src={"../../images/recipes.webp"}
         alt={`image for ${tag}`}
         loading="eager"
         placeholder="blurred"

@@ -13,7 +13,7 @@ export default function WellnessTag() {
     >
       <StaticImage
         key={`img ${tag}`}
-        src="https://www.thewholepetvet.com/blog/wp-content/uploads/2022/06/iStock-1129449588-2000x1285.jpg"
+        src={"../../images/wellness.webp"}
         alt={`image for ${tag}`}
         loading="eager"
         placeholder="blurred"
