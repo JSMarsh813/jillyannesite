@@ -26,6 +26,7 @@ const BlogRollTemplate = props => {
                       <LazyLoadImage
                         height="100"
                         width="400"
+                        loading="eager"
                         effect="blur"
                         alt={
                           post.frontmatter.featuredimagealt
