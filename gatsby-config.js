@@ -15,7 +15,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
+    `gatsby-plugin-minify``gatsby-plugin-image`,
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -49,22 +49,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
-    // {
-    //   resolve: `gatsby-omni-font-loader`,
-    //   options: {
-    //     mode: "async",
-    //     enableListener: true,
-    //     preconnect: [
-    //       `https://fonts.googleapis.com`,
-    //       `https://fonts.gstatic.com`,
-    //     ],
-    //     web: [
-    //       {
-    //         name: `Josefin Slab`,
-    //         file: `https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600;700&display=swap`,
-    //       },
-    //     ],
-    //   },
-    // },
   ],
 }
