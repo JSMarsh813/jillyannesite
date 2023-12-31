@@ -54,9 +54,9 @@ const BlogRollTemplate = props => {
                 </p>
               </header>
               <section className="px-6">
-                <p className="pb-4">{post.excerpt}</p>
+                <p className="pb-4 h-80 2xl:h-72">{post.excerpt}</p>
                 {/* KEEP READING BUTTON */}
-                <div className="text-center">
+                <div className="text-center mb-2">
                   <Link
                     className="button bg-secondary p-2 rounded-md border-b-2 border-white hover:bg-primary"
                     to={post.fields.slug}

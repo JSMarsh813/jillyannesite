@@ -85,7 +85,10 @@ const BlogRollPrettierTemplate = props => {
                     {post.frontmatter.title}
                   </Link>
                 </h3>
-                <p className="text-base text-body-color h-64">{post.excerpt}</p>
+                <p className="text-base text-body-color h-80 2xl:h-72">
+                  {post.excerpt}
+                  {/* h-64 is what pushes the keep reading button down */}
+                </p>
 
                 <div className="text-center">
                   <Link
