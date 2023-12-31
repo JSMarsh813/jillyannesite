@@ -81,3 +81,5 @@ export default function WorkWithMe() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Work With Me" />

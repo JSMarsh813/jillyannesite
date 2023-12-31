@@ -174,3 +174,5 @@ export const MainBlogPageQuery = graphql`
 `
 
 export default Blog
+
+export const Head = () => <Seo title="Blog" />

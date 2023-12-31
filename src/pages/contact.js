@@ -80,3 +80,5 @@ export default function Contact() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="Contact" />

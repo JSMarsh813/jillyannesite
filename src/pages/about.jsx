@@ -10,3 +10,5 @@ export default function About() {
     </Layout>
   )
 }
+
+export const Head = () => <Seo title="About Me" />

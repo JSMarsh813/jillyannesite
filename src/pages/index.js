@@ -123,7 +123,7 @@ export default IndexPage
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-// export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Home" />
 
 export const IndexPageQuery = graphql`
   query BlogRollQuery {
