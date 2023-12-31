@@ -22,7 +22,7 @@ const BlogRollPrettierTemplate = props => {
               placeholder="blurred"
               style={{
                 position: "absolute",
-                zIndex: "0",
+                zIndex: "1",
                 width: "100%",
                 height: "25%",
               }}

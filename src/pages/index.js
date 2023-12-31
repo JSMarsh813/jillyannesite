@@ -68,9 +68,13 @@ const IndexPage = props => {
             loading="lazy"
             objectfit="cover"
             placeholder="blurred"
-            className="absolute z-0 w-full h-full"
+            style={{
+              position: "absolute",
+              zIndex: "1",
+              width: "100%",
+              height: "100%",
+            }}
           />
-
           <Link
             className="bg-secondary/70 text-2xl text-white py-4 px-8 text-center font-bold border-b-8 border-primary/40 custom_hover z-40"
             to="/blog"
