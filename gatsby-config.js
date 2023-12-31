@@ -50,32 +50,21 @@ module.exports = {
     },
     "gatsby-plugin-postcss",
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-omni-font-loader`,
       options: {
-        fonts: [
+        mode: "async",
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
           {
-            family: `Josefin Slab`,
-            weights: ["400", "600", "700"],
+            name: `Josefin Slab`,
+            file: `https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600;700&display=swap`,
           },
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-omni-font-loader`,
-    //   options: {
-    //     mode: "async",
-    //     enableListener: true,
-    //     preconnect: [
-    //       `https://fonts.googleapis.com`,
-    //       `https://fonts.gstatic.com`,
-    //     ],
-    //     web: [
-    //       {
-    //         name: `Josefin Slab`,
-    //         file: `https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;600;700&display=swap`,
-    //       },
-    //     ],
-    //   },
-    // },
   ],
 }
