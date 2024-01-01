@@ -13,15 +13,15 @@ export default function Footer() {
   const socials = [
     {
       name: "YOUTUBE",
-      href: "https://www.youtube.com/@JillyannesJourney/",
+      href: "https://www.youtube.com/@nourishedbyketo/",
     },
     {
       name: "INSTAGRAM",
-      href: "https://www.instagram.com/jillyannesjourney/",
+      href: "https://www.instagram.com/nourishedbyketo/",
     },
     {
       name: "FACEBOOK",
-      href: "https://www.facebook.com/JillyannesJourney/",
+      href: "https://www.facebook.com/NourishedByKeto/",
     },
   ]
 
