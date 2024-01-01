@@ -36,11 +36,10 @@ export const BlogPostTemplate = ({
   return (
     <section className="section bg-primary py-6 text-black">
       {helmet || ""}
-      {console.log(disqusConfig)}
 
       <div className=" px-4 max-w-screen-lg mx-auto">
         <div className="bg-white">
-          <div className="border-2 border-secondary">
+          <div className="border-2 border-secondary px-4">
             <header className="bg-secondary p-2">
               <h1 className="text-5xl font-semibold md:tracking-tight text-center py-4 text-white">
                 {title}
@@ -57,8 +56,6 @@ export const BlogPostTemplate = ({
                 "
               >
                 <LazyLoadImage
-                  height="100"
-                  width="400"
                   effect="blur"
                   alt={imagealt ? imagealt : ""}
                   src={image} // use normal <img> attributes as props
@@ -89,10 +86,11 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+
+            <CommentCount config={disqusConfig} placeholder={"..."} />
+
+            <Disqus config={disqusConfig} />
           </div>
-          <CommentCount config={disqusConfig} placeholder={"..."} />
-          /* Post Contents */
-          <Disqus config={disqusConfig} />
         </div>
       </div>
     </section>
