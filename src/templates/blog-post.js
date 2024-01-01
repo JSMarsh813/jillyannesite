@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Content, { HTMLContent } from "../components/content"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
+import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -19,13 +20,24 @@ export const BlogPostTemplate = ({
   image,
   imagealt,
   helmet,
+  fields,
+  id,
 }) => {
   const PostContent = contentComponent || Content
+
+  const baseUrl = `https-nourishedbyketo-com`
+
+  let disqusConfig = {
+    url: `${baseUrl + fields}`,
+    identifier: id,
+    title: title,
+  }
 
   return (
     <section className="section bg-primary py-6 text-black">
       {helmet || ""}
-      {console.log(contentComponent)}
+      {console.log(disqusConfig)}
+
       <div className=" px-4 max-w-screen-lg mx-auto">
         <div className="bg-white">
           <div className="border-2 border-secondary">
@@ -78,6 +90,9 @@ export const BlogPostTemplate = ({
               </div>
             ) : null}
           </div>
+          <CommentCount config={disqusConfig} placeholder={"..."} />
+          /* Post Contents */
+          <Disqus config={disqusConfig} />
         </div>
       </div>
     </section>
@@ -115,6 +130,8 @@ const BlogPost = ({ data }) => {
         date={post.frontmatter.date}
         image={post.frontmatter.featuredimage}
         imagealt={post.frontmatter.featuredimagealt}
+        id={post.id}
+        fields={post.fields.slug}
       />
     </Layout>
   )
@@ -140,6 +157,9 @@ export const pageQuery = graphql`
         tags
         featuredimage
         featuredimagealt
+      }
+      fields {
+        slug
       }
     }
   }
