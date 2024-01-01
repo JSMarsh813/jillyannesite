@@ -28,7 +28,7 @@ export const BlogPostTemplate = ({
   const baseUrl = `https-nourishedbyketo-com`
 
   let disqusConfig = {
-    url: `${baseUrl + fields}`,
+    //url: `${baseUrl + fields}`,
     identifier: id,
     title: title,
   }
