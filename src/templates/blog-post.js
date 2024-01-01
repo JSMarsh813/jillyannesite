@@ -25,10 +25,10 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
 
-  const baseUrl = `https-nourishedbyketo-com`
+  const baseUrl = `http://nourishedbyketo.com`
 
   let disqusConfig = {
-    //url: `${baseUrl + fields}`,
+    url: `${baseUrl + fields}`,
     identifier: id,
     title: title,
   }
