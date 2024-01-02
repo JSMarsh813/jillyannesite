@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { kebabCase } from "lodash"
 import { Helmet } from "react-helmet"
@@ -26,6 +26,13 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   const baseUrl = `http://nourishedbyketo.com`
+
+  const [disqusIsVisible, setDisqusVisibility] = useState(false)
+
+  // Set Disqus visibility state on click.
+  const showCommentsClick = event => {
+    setDisqusVisibility(true)
+  }
 
   let disqusConfig = {
     url: `${baseUrl + fields}`,
@@ -86,10 +93,20 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+            {!disqusIsVisible && (
+              <div className="flex center items-center justify-center">
+                <button
+                  className="button bg-secondary p-2 rounded-md border-b-2 mb-2 px-4 border-primary hover:bg-primary text-white "
+                  onClick={showCommentsClick}
+                >
+                  Load Comments
+                </button>
+              </div>
+            )}
 
-            <CommentCount config={disqusConfig} placeholder={"..."} />
-
-            <Disqus config={disqusConfig} />
+            {disqusIsVisible && (
+                <CommentCount config={disqusConfig} placeholder={"..."} />
+              ) && <Disqus config={disqusConfig} />}
           </div>
         </div>
       </div>
