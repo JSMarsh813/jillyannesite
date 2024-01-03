@@ -1,16 +1,15 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Janet Spellman",
   "dependencies": {
     "@fontsource/josefin-slab": "^5.0.18",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "daisyui": "^2.51.6",
     "gatsby": "^4.0.0",
-    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-manifest": "^4.24.0",
