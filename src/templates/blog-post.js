@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import Content, { HTMLContent } from "../components/content"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
-import { Disqus, CommentCount } from "gatsby-plugin-disqus"
+import Disquis from "../components/Disquis"
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -25,19 +25,11 @@ export const BlogPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
 
-  const baseUrl = `http://nourishedbyketo.com`
-
   const [disqusIsVisible, setDisqusVisibility] = useState(false)
 
   // Set Disqus visibility state on click.
   const showCommentsClick = event => {
     setDisqusVisibility(true)
-  }
-
-  let disqusConfig = {
-    url: `${baseUrl + fields}`,
-    identifier: id,
-    title: title,
   }
 
   return (
@@ -105,8 +97,8 @@ export const BlogPostTemplate = ({
             )}
 
             {disqusIsVisible && (
-                <CommentCount config={disqusConfig} placeholder={"..."} />
-              ) && <Disqus config={disqusConfig} />}
+              <Disquis id={id} title={title} fields={fields}></Disquis>
+            )}
           </div>
         </div>
       </div>
