@@ -51,7 +51,7 @@ export const BlogPostTemplate = ({
 
             {image && (
               <div
-                className="featured-thumbnail m-auto pt-10 max-w-md
+                className="featured-thumbnail m-auto pt-10 max-w-md aspect-video
                 "
               >
                 <LazyLoadImage
