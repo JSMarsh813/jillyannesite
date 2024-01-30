@@ -46,7 +46,7 @@ export const BlogPostTemplate = ({
 
               <span className="block text-center text-white">{date}</span>
 
-              <p className="text-2xl text-center text-white">{description}</p>
+              {/* <p className="text-2xl text-center text-white">{description}</p> */}
             </header>
 
             {image && (
