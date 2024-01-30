@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
-title: third blog
-date: 2023-05-26T06:30:16.987Z
-description: yet another test!
-featuredimage: https://mailtrap.io/wp-content/uploads/2020/06/testing_meme5.jpeg
+title: Fasting Record!
+date: 2023-06-09T06:30:16.987Z
+description: This is a record for me. About to break my fast 😉
+featuredimage: /assets/recordbreakjune8th.jpg
 tags:
-  - life
+  - wellness
 ---
-testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity test testity testtestity test testity test testity test testity test
+This is a record for me. About to break my fast 😉
