@@ -50,7 +50,7 @@ const BlogRollPrettierTemplate = props => {
                 //to add empty space if no image was provided for the post, so the posts line up nicely
                 <div className="rounded mb-2 h-[300px]  flex overflow-hidden"></div>
               )}
-              <article className="">
+              <article className="mt-4">
                 <span
                   className="
                          bg-primary
