@@ -32,7 +32,7 @@ export default function Contact() {
               type="email"
               id="email"
               className="shadow-sm border border-secondary rounded-lg block w-full p-2.5 placeholder:text-black"
-              placeholder="kuzco@llamasarecool.com"
+              placeholder="kuzcoisthebestllama@gmail.com"
               style={{ backgroundColor: "#F3FCFD" }}
               required
             />
@@ -48,7 +48,7 @@ export default function Contact() {
               type="text"
               id="subject"
               className="block p-3 w-full rounded-lg border  border-secondary shadow-sm placeholder:text-black"
-              placeholder="Let us know how we can help you"
+              placeholder="Let's start a chat"
               style={{ backgroundColor: "#F3FCFD" }}
               required
             />

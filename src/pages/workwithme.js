@@ -33,7 +33,7 @@ export default function WorkWithMe() {
               type="email"
               id="email"
               className="shadow-sm border border-secondary rounded-lg block w-full p-2.5 placeholder:text-black"
-              placeholder="jillyanne@testtest.com"
+              placeholder="you@companyemail.com"
               style={{ backgroundColor: "#F3FCFD" }}
               required
             />
@@ -65,7 +65,7 @@ export default function WorkWithMe() {
               id="message"
               rows="6"
               className="block p-2.5 w-full rounded-lg shadow-sm border border-secondary placeholder:text-black"
-              placeholder="Please tell us more about the opportunity here"
+              placeholder="Please tell me more about the opportunity."
               style={{ backgroundColor: "#F3FCFD" }}
               required
             ></textarea>
