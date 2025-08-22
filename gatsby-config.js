@@ -10,9 +10,9 @@
 module.exports = {
   siteMetadata: {
     title: `JillyAnne`,
-    description: `A personal site for jillyanne.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Jillyanne's experiences with using the keto diet to improve her health and her life.`,
+    author: `janet spellman`,
+    siteUrl: `https://nourishedbyketo.com/`,
   },
   plugins: [
     `gatsby-plugin-minify`,
